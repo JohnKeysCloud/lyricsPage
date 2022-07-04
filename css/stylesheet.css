@@ -1,0 +1,157 @@
+:root {
+  /* h1 */
+  --h1-fontsize: 5rem;
+  --h4-fontsize: 2.8rem;
+}
+
+@font-face {
+  font-family: 'gosha';
+  src: url(../fonts/GoshaSansRegular.otf);
+}
+
+*, 
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  color: white;
+  font-weight: bold;
+  font-family: 'Gosha', Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+  margin: 0;
+  min-height: 100vh;
+
+  position: relative;
+}
+
+h1, h4 {
+  margin: 0;
+  text-shadow: 0 0 10px silver;
+}
+
+h1 {
+  color: black;
+  font-size: var(--h1-fontsize);
+}
+
+h4 {
+  color: black;
+  font-size: var(--h4-fontsize);
+  opacity: 0.5;
+  margin-bottom: 30px;
+}
+
+.jkc-bg-wrapper {
+  position: absolute;
+  inset: 0;
+
+  background: url(../imgs/jkc.JPG);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.musicNotes {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  filter: drop-shadow(0 0 18px gold);
+  opacity: 0.7;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.page-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  gap: 50px;
+
+  height: 100%;
+  margin-inline: auto;
+  padding: 50px;
+  width: 100vw;
+}
+
+.inner-video {
+  position: relative;
+
+  box-shadow: 10px 10px 50px gold;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0; 
+  width: min(70vw, 500px);
+}
+
+.inner-video iframe {
+  display: block;
+
+  position: absolute;
+  inset: 0;
+
+  height: 100%;
+  width: 100%;
+}
+
+.song-lyrics {
+  position: relative;
+  isolation: isolate;
+
+  background-color: rgba(0, 0, 0, 0.451);
+  border-radius: 8px;
+  border: 1px ridge silver;
+  font-size: clamp(1.4rem, 1.23vw, 1.8rem);
+  height: max-content;
+  margin: 0;
+  overflow: scroll;
+  padding: 10px;
+  text-align: left;
+  text-shadow: 0 0 5px black;
+}
+
+.song-lyrics::after {
+  position: absolute;
+  inset: 0;
+
+  content: '';
+  background: linear-gradient(to top, black, gray, white);
+  opacity: 0.3;
+
+  z-index: -1;
+}
+
+@media only screen and (max-width: 1024px) {
+  .page-content {
+    grid-template-columns: 1fr;
+  }
+
+  .song {
+    align-self: end;
+  }
+
+  .song-lyrics {
+    align-self: start;
+
+    max-height: 400px; 
+    text-align: center;
+    width: 75vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .song-lyrics {
+    max-height: 300px;
+  }
+
+  .musicNotes {
+    transform: scale(0.8) translateX(50px);
+  }
+}
