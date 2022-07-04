@@ -117,7 +117,7 @@ h4 {
   background-color: rgba(0, 0, 0, 0.451);
   border-radius: 8px;
   border: 1px ridge silver;
-  font-size: clamp(1rem, 1.4vw, 1.8rem);
+  font-size: clamp(1.11rem, 1.4vw, 1.8rem);
   height: max-content;
   margin: 0;
   overflow: scroll;
