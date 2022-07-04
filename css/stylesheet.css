@@ -88,6 +88,7 @@ h4 {
   box-shadow: 10px 10px 50px gold;
   padding-bottom: 56.25%; /* 16:9 */
   height: 0; 
+  margin-inline: auto;
   width: min(70vw, 500px);
 }
 
@@ -108,7 +109,7 @@ h4 {
   background-color: rgba(0, 0, 0, 0.451);
   border-radius: 8px;
   border: 1px ridge silver;
-  font-size: clamp(1.4rem, 1.23vw, 1.8rem);
+  font-size: clamp(1rem, 1.4vw, 1.8rem);
   height: max-content;
   margin: 0;
   overflow: scroll;
@@ -129,6 +130,11 @@ h4 {
 }
 
 @media only screen and (max-width: 1024px) {
+
+  h1, h4 {
+    text-align: center;
+  }
+
   .page-content {
     grid-template-columns: 1fr;
   }
