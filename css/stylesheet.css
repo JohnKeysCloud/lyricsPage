@@ -84,7 +84,7 @@ h4 {
   place-items: center;
   gap: 50px;
 
-  height: 100%;
+  height: 100vh;
   margin-inline: auto;
   padding: 50px;
   width: 100vw;
