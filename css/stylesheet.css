@@ -120,7 +120,7 @@ h4 {
   border-radius: 8px;
   border: 1px ridge silver;
   font-size: clamp(1.11rem, 1.4vw, 1.8rem);
-  height: max-content;
+  min-height: max-content;
   margin: 0;
   overflow: scroll;
   padding: 10px;
